@@ -12,7 +12,8 @@ class DeviceCompile extends StatefulWidget {
   _DeviceCompileState createState() => _DeviceCompileState();
 }
 
-class _DeviceCompileState extends State<DeviceCompile> {
+class _DeviceCompileState extends State<DeviceCompile>
+    with AutomaticKeepAliveClientMixin {
   List<Category> categories = Utils.getIOT();
   String status = 'OFF';
   double sta = 1;
@@ -58,7 +59,7 @@ class _DeviceCompileState extends State<DeviceCompile> {
                 )),
           ],
         ),
-        SizedBox(height: 5),
+        SizedBox(height: 2),
         OutlinedButton.icon(
             onPressed: () {
               setState(() {
@@ -81,4 +82,7 @@ class _DeviceCompileState extends State<DeviceCompile> {
       ],
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }

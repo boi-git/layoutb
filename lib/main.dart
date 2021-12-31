@@ -11,7 +11,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: DeviceListPage(),
+      home: DefaultTabController(
+        length: 3,
+        child: DeviceListPage(),
+      ),
     );
   }
 }
